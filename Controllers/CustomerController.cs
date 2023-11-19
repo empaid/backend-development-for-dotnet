@@ -18,5 +18,11 @@ namespace backend_development_for_dotnet.Controllers
             ViewBag.CustomerList = customers;
             return View();
         }
+        [Route("~/")]
+        [Route("/sample/message")]
+        public string Message()
+        {
+            return "Message String";
+        }
     }
 }
