@@ -1,0 +1,11 @@
+@{
+    
+}
+<h1>Customer Index</h1>
+<h3>@ViewBag.Message</h3>
+<p>There are @ViewBag.CustomerCount customers into list</p>
+<ul>
+    @foreach(var customer in ViewBag.CustomerList){
+        <li>@customer.Id - @customer.Name - @customer.Amount </li>
+    }
+</ul>
