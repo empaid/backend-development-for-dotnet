@@ -1,6 +1,7 @@
 ﻿using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
 using backend_development_for_dotnet.Models;
+using Microsoft.AspNetCore.Mvc.ActionConstraints;
 
 namespace backend_development_for_dotnet.Controllers;
 
@@ -21,6 +22,20 @@ public class HomeController : Controller
     public IActionResult Privacy()
     {
         return View();
+    }
+
+    public IActionResult ActionSample()
+    {
+        return View();
+    }
+    
+    public ViewResult Message()
+    {
+        return View();
+    }
+    public string Str()
+    {
+        return "Returned as string";
     }
 
     [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
