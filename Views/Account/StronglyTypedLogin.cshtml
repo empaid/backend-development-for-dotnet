@@ -1,0 +1,8 @@
+@model backend_development_for_dotnet.Models.LoginViewModel
+<h3>Strongly Typed Login Form</h3>
+@using(Html.BeginForm("LoginStrongPost", "Account", FormMethod.Post))
+{
+    <div>Username: @Html.TextBoxFor(m => m.Username)</div>
+    <div>Password: @Html.PasswordFor(m => m.Password)</div>
+    <div><input type="submit" value="Login" /></div>
+}
