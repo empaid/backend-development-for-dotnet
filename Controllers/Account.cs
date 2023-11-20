@@ -27,5 +27,20 @@ namespace backend_development_for_dotnet.Controllers
             ViewBag.Message = "Strongly Typed Form";
             return View();
         }
+        public IActionResult UserDetail()
+        {
+            var user = new LoginViewModel() {Username="Hardik", Password="pass"};
+            return View(user);
+        }
+        public IActionResult UserDetails()
+        {
+            var users = new List<LoginViewModel>(){
+                new LoginViewModel(){Username="Hardik", Password="pass"},
+                new LoginViewModel(){Username="Piyush", Password="pass"},
+                new LoginViewModel(){Username="Disha", Password="pass"},
+
+            };
+            return View(users);
+        }
     }
 }

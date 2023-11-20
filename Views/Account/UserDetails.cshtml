@@ -1,0 +1,6 @@
+@model IList<backend_development_for_dotnet.Models.LoginViewModel>
+<ul>
+@foreach(var item in Model){
+<li>@item.Username - @item.Password</li>
+}
+</ul>
