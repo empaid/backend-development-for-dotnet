@@ -45,5 +45,21 @@ namespace backend_development_for_dotnet.Controllers
         {
             return "Message String";
         }
+
+        public IActionResult Login()
+        {
+            HttpContext.Session.SetString("username", "hardik");
+            return RedirectToAction("Success");
+        }
+        public IActionResult Success()
+        {
+            ViewBag.Username = HttpContext.Session.GetString("username");
+            return View();
+        }
+        public IActionResult Logout()
+        {
+            HttpContext.Session.Remove("username");
+            return RedirectToAction("Index");
+        }
     }
 }
