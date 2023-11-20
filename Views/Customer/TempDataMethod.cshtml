@@ -1,0 +1,16 @@
+@{
+    
+}
+<h1>Customer Index</h1>
+<h3>@TempData["Message"]</h3>
+<p>There are @TempData["CustomerCount"] customers into list</p>
+<ul>
+    @foreach(var customer in TempData["CustomerList"] as List<Customer>){
+        <li>@customer.Id - @customer.Name - @customer.Amount </li>
+    }
+</ul>
+@{
+    TempData.Keep("Message");
+}
+@Html.ActionLink("Details Page", "Details", "Customer");
+<a asp-controller="Customer" asp-action="Message">Message</a>

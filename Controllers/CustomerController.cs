@@ -25,6 +25,20 @@ namespace backend_development_for_dotnet.Controllers
             ViewData["CustomerList"] = customers;
             return View();
         }
+        public IActionResult TempDataMethod()
+        {
+            TempData["Message"] = "Temp Data Message";
+            TempData["CustomerCount"] = customers.Count();
+            TempData["CustomerList"] = customers;
+            return View();
+        }
+        public IActionResult Method2()
+        {
+            if(TempData["Message"]==null)
+                return RedirectToAction("Index");
+            ViewBag.Message = TempData["Message"].ToString();
+            return View();
+        }
         [Route("~/")]
         [Route("/sample/message")]
         public string Message()
