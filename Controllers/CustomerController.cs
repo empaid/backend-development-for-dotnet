@@ -61,5 +61,14 @@ namespace backend_development_for_dotnet.Controllers
             HttpContext.Session.Remove("username");
             return RedirectToAction("Index");
         }
+
+        public IActionResult QueryTest()
+        {
+            string name = "Hardik Purohit";
+            if(!String.IsNullOrEmpty(HttpContext.Request.Query["name"]))
+                name = HttpContext.Request.Query["name"];
+            ViewBag.Name = name;
+            return View();
+        }
     }
 }
