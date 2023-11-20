@@ -18,6 +18,13 @@ namespace backend_development_for_dotnet.Controllers
             ViewBag.CustomerList = customers;
             return View();
         }
+        public IActionResult Details()
+        {
+            ViewData["Message"] = "View Data Message";
+            ViewData["CustomerCount"] = customers.Count();
+            ViewData["CustomerList"] = customers;
+            return View();
+        }
         [Route("~/")]
         [Route("/sample/message")]
         public string Message()
