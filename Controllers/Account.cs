@@ -42,5 +42,21 @@ namespace backend_development_for_dotnet.Controllers
             };
             return View(users);
         }
+
+        public IActionResult GetAccount()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public IActionResult PostAccount(Account account)
+        {
+            return View("Success");
+            if(ModelState.IsValid)
+            {
+                return View("Success");
+            }
+            return RedirectToAction("GetAccount");
+        }
     }
 }
