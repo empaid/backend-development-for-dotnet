@@ -13,6 +13,7 @@ public partial class DatabaseFirstDbContext : DbContext
     public DatabaseFirstDbContext(DbContextOptions<DatabaseFirstDbContext> options)
         : base(options)
     {
+        
     }
 
     public virtual DbSet<Product> Products { get; set; }

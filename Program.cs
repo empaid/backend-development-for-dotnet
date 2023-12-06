@@ -1,3 +1,6 @@
+using backend_development_for_dotnet.Models;
+using Microsoft.EntityFrameworkCore;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -8,6 +11,7 @@ builder.Services.AddSession(options =>
     options.Cookie.IsEssential = true;
     options.Cookie.IsEssential = true;
 });
+builder.Services.AddDbContext<DatabaseFirstDbContext>(options => options.UseMySQL("server=localhost;database=DatabaseFirstDB;user=root;password=password"));
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
